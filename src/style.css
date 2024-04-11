@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.content {
+    display: grid;
+    border-radius: 50px;
+    border: black 5px solid;
+    width: 60vw;
+    height: 60vh;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(8, 12.5%);
+    grid-template-rows: repeat(8, 12.5%);
+}
+
+
+.addNewProjectPage {
+    display: grid;
+    grid-column: 1/9;
+    grid-row: 1/9;
+    align-content: center;
+    justify-items: center;
+    display: none;
+}

@@ -1,6 +1,6 @@
 
 
-export function getUserInputs() {
+export function getUserProjectInputs() {
     const projectForm = document.querySelector('.addNewProjectPage form');
     const projectName = document.getElementById('projectName').value;
     const projectDueDate = document.getElementById('projectDueDate');
