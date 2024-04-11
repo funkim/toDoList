@@ -1,3 +1,9 @@
-import { createToDo } from "./todo";
-createToDo("Complete to-do website", "High", "Low", "Completed");
-console.log(name)
+import { getUserInputs } from "./todo"; 
+import { createProject } from "./todo";
+
+const projectSubmit = document.getElementById("projectCreator");
+projectSubmit.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const { projectName, projectDueDate, projectDescription, priority } = getUserInputs();
+    createProject(projectName,  projectDueDate.value, projectDescription, priority );
+});
