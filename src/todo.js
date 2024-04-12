@@ -16,7 +16,6 @@ export function getUserProjectInputs() {
 }
 
 export function createProject(name, dueDate, description, priority) {
- 
     const projectForm = document.querySelector('.addNewProjectPage');
     const allProjectsContainer = document.getElementById("projects");
     const projectContainer = document.createElement("div");
