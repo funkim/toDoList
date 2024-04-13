@@ -63,3 +63,16 @@ createProjectButton.addEventListener('click', function() {
     projectForm.classList.remove("hidden")
 })
 }
+
+export function dragAndDrop() {
+    const draggableProject = document.querySelectorAll('.projectContainer')
+    draggableProject.forEach(project => {
+        project.addEventListener('dragstart', () =>{
+project.classList.add('dragging')
+
+        })
+    project.addEventListener('dragend', () =>{
+project.classList.remove('dragging')
+        });
+    });
+}
