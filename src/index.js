@@ -1,7 +1,13 @@
 import { getUserProjectInputs, createProject } from "./projectManager.js";
 import { createProjectListener, dragAndDrop, appendProjectToDOM, showLandingPage } from "./uiManager.js";
+import { populateStorage, retrieveProjects } from "./persistentStorage.js";
 import { style } from "./style.css";
-createProjectListener();
+
+    createProjectListener();
+    dragAndDrop();
+    retrieveProjects();
+
+
 
 const projectSubmit = document.getElementById("projectCreator");
 projectSubmit.addEventListener('submit', function(e) {
@@ -12,4 +18,3 @@ projectSubmit.addEventListener('submit', function(e) {
     showLandingPage();
 });
 
-dragAndDrop();

@@ -1,3 +1,4 @@
+import { populateStorage } from "./persistentStorage"
 export function createProjectListener() {
 const createProjectButton = document.querySelector('.createNewProject')
 const landingPage = document.querySelector(".landingPage")
@@ -12,6 +13,7 @@ createProjectButton.addEventListener('click', function() {
 export function appendProjectToDOM(project) {
     const allProjectsContainer = document.getElementById("projects");
     allProjectsContainer.appendChild(project);
+    populateStorage();
 
 }
 export function dragAndDrop() {

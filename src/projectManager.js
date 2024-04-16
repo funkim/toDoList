@@ -1,3 +1,5 @@
+import { populateStorage } from "./persistentStorage";
+
 export function getUserProjectInputs() {
     const projectName = document.getElementById('projectName').value;
     const projectDueDate = document.getElementById('projectDueDate');
@@ -39,7 +41,6 @@ export function createProject(name, dueDate, description, priority) {
     projectContainerDescription.textContent = description;
 
     deleteProject(projectContainer);
-
     return projectContainer;
 }
 
@@ -51,6 +52,7 @@ function deleteProject(projectContainer) {
     deleteProjectButton.classList.add("deleteButton");
     deleteProjectButton.addEventListener('click', function() {
         projectContainer.remove();
+        populateStorage() 
     });
 }
 
