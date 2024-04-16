@@ -15,6 +15,7 @@ export function getUserProjectInputs() {
         return {projectName, projectDueDate, projectDescription, priority}
 }
 
+
 export function createProject(name, dueDate, description, priority) {
     const projectForm = document.querySelector('.addNewProjectPage');
     const allProjectsContainer = document.getElementById("projects");
@@ -40,16 +41,18 @@ projectContainerHeader.innerHTML = name
 projectContainerPriority.innerHTML = priority 
 projectContainerDueDate.innerHTML = dueDate
 projectContainerDescription.innerHTML= description
-projectForm.classList.add()
+projectForm.classList.add("addNewProjectPage");
 }
 
-function deleteProject(projectContainer) {
-    const deleteProjectButton = document.createElement("input");0
+function deleteProject(projectContainerArea) {
+    const deleteProjectButton = document.createElement("input");
     deleteProjectButton.setAttribute("type", "button");
-    projectContainer.appendChild(deleteProjectButton);
-
+    projectContainerArea.appendChild(deleteProjectButton);
+    deleteProjectButton.classList.add("deleteButton") ;
     deleteProjectButton.addEventListener('click', function() {
-    projectContainer.remove();
+    if (confirm('Are you sure you want to delete this project?')) {
+    projectContainerArea.remove();
+    }
     }
 )}
 
