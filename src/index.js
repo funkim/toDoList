@@ -1,20 +1,15 @@
-import { getUserProjectInputs } from "./todo"; 
-import { createProject } from "./todo";
-import { createProjectListener } from "./todo";
-import { dragAndDrop } from "./todo";
-import { style } from "./style.css"
-const landingPage = document.querySelector(".landingPage")
-const projectForm = document.querySelector('.addNewProjectPage')
-
-
+import { getUserProjectInputs, createProject } from "./projectManager.js";
+import { createProjectListener, dragAndDrop, appendProjectToDOM, showLandingPage } from "./uiManager.js";
+import { style } from "./style.css";
 createProjectListener();
+
 const projectSubmit = document.getElementById("projectCreator");
 projectSubmit.addEventListener('submit', function(e) {
     e.preventDefault();
     const { projectName, projectDueDate, projectDescription, priority } = getUserProjectInputs();
-    createProject(projectName,  projectDueDate.value, projectDescription, priority );
-    projectForm.classList.add("hidden")
-    landingPage.classList.remove("hidden")
-});    
+    const project = createProject(projectName, projectDueDate.value, projectDescription, priority);
+    appendProjectToDOM(project);
+    showLandingPage();
+});
 
 dragAndDrop();
