@@ -45,6 +45,7 @@ export function createProject(name, dueDate, description, priority) {
 
 function deleteProject(projectContainer) {
     const deleteProjectButton = document.createElement("input");
+    deleteProjectButton.value = "X"
     deleteProjectButton.setAttribute("type", "button");
     projectContainer.appendChild(deleteProjectButton);
     deleteProjectButton.classList.add("deleteButton");
